@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: "Atyp Variable";
+  /* border: 1px solid red; */
+}
+
+body {
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+:root {
+  --accent-color: rgba(69, 135, 194, 1);
+  --font-color: rgba(38, 39, 41, 1);
+  --interaction-color: rgba(133, 133, 133, 1);
+}
