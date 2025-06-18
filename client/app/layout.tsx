@@ -1,22 +1,34 @@
 import "./index.css";
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin", "cyrillic"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Технологічне проектування медзакладів ➛ Технолоджі Проджект Груп",
-  description:
-    "Замовити технологічне проектування медичних закладів ➛ Послуги з проектування за вигідними цінами ✓ ТОВ «ТЕХНОЛОДЖИ ПРОДЖЕКТ ГРУП»",
+  metadataBase: new URL("https://tpgmedical.group"),
+  title: {
+    default: "Технолоджі Проджект Груп",
+    template: "%s | Технолоджі Проджект Груп",
+  },
+  description: "Технологічне проектування медичних закладів",
+  alternates: {
+    canonical: "/",
+    languages: {
+      uk: "/",
+      en: "/en",
+    },
+  },
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
+    <html lang="uk">
       <body className={inter.className}>
-        <Navbar />
-        <main className="max-w-3xl mx-auto py-10"> {children}</main>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
