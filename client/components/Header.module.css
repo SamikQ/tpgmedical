@@ -1,32 +1,192 @@
 .header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 60px;
+  background: inherit;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: #fff;
+  justify-content: space-between;
+  padding: 0 16px;
+  min-width: 320px;
+  max-width: 1440px;
+  z-index: 10;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--font-color);
+.logoBlock {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logoImg {
+  width: 48px;
+  height: 48px;
+  background: var(--header-logo-bg);
+  border: 2px solid var(--header-logo-border);
+  border-radius: 50%;
+  object-fit: cover;
+}
+.logoText {
+  color: var(--header-text);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: pre-line;
 }
 
 .nav {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 24px;
 }
-
-.nav a {
-  color: var(--font-color);
-  text-decoration: none;
+.navLink {
+  color: var(--header-text);
+  font-family: var(--font-main);
   font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.navLink:hover {
+  color: var(--header-accent);
 }
 
-@media (max-width: 600px) {
+.langSelect {
+  position: relative;
+  color: var(--header-lang);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.langSelect:hover,
+.langSelect:focus {
+  background: rgba(2, 85, 149, 0.08);
+}
+.langDropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: var(--header-bg);
+  border: 1px solid var(--header-accent);
+  border-radius: 8px;
+  min-width: 80px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+.langOption {
+  color: var(--header-text);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  transition: background 0.2s;
+}
+.langOption:hover {
+  background: var(--header-accent);
+  color: #fff;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+}
+.burgerLine {
+  width: 28px;
+  height: 3px;
+  background: var(--header-text);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Mobile (до 768px) */
+@media (max-width: 767px) {
   .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70vw;
+    max-width: 320px;
+    background: var(--header-bg);
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 0;
+    padding: 80px 24px 24px 24px;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.08);
+    z-index: 99;
+  }
+  .nav.open {
+    transform: translateX(0);
+  }
+  .navLink {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .burger {
+    display: flex;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    padding: 0 32px;
+  }
+  .nav {
+    gap: 18px;
+  }
+  .logoText {
+    font-size: 0.95rem;
+  }
+}
+
+/* Laptop (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .header {
+    padding: 0 48px;
+  }
+  .nav {
+    gap: 22px;
+  }
+  .logoText {
+    font-size: 1.05rem;
+  }
+}
+
+/* Desktop (1440px+) */
+@media (min-width: 1440px) {
+  .header {
+    padding: 0 80px;
+  }
+  .nav {
+    gap: 30px;
+  }
+  .logoText {
+    font-size: 1.1rem;
   }
 }

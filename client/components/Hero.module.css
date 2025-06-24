@@ -1,20 +1,51 @@
 .hero {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  /* color: var(--color-bg-light, #fff); */
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 4rem 1rem;
-  background: url('/hero.jpg') center/cover no-repeat;
-  text-align: center;
-  color: #fff;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 48px 16px 32px 16px;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  background: var(--header-bg, #2d2d2d);
+}
+
+.bgImage img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .content {
-  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .title {
+  font-family: var(--font-main);
   font-size: 2rem;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-bg-light);
+  margin-bottom: 16px;
 }
 
 .subtitle {
@@ -24,18 +55,50 @@
 
 .cta {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--accent-color);
-  color: #fff;
+  padding: 14px 36px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-bg-light);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--color-bg-light);
+  border-radius: 12px;
+  cursor: pointer;
   text-decoration: none;
-  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  backdrop-filter: blur(16px);
+}
+.cta:hover {
+  background: var(--color-bg-light);
+  color: var(--header-bg);
 }
 
 @media (min-width: 768px) {
+  .hero {
+    min-height: 500px;
+    padding: 64px 32px 48px 32px;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 700px;
+    padding: 96px 80px 64px 80px;
+  }
   .title {
     font-size: 3rem;
   }
-  .subtitle {
-    font-size: 1.25rem;
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    min-height: 880px;
+    padding: 120px 160px 80px 160px;
+  }
+  .title {
+    font-size: 2.5rem;
   }
 }

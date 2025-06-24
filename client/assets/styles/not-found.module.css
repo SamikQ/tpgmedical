@@ -1,0 +1,83 @@
+
+.wrapper404 {
+  min-height: 100vh;
+  background: var(--color-bg-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.shapeBG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.ellipses {
+  position: absolute;
+  z-index: 1;
+}
+
+.text404 {
+  font-family: var(--font-alt);
+  font-size: 12rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  text-align: center;
+  margin: 0;
+  z-index: 2;
+}
+
+.descriptionBlock {
+  margin-top: 2rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-main);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-text-secondary);
+}
+
+.backBtn {
+  margin-top: 2.5rem;
+  background: var(--color-btn-bg);
+  color: var(--color-bg-main);
+  font-family: var(--font-alt);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  padding: 1.2rem 2.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: background 0.2s;
+  z-index: 2;
+}
+.backBtn:hover {
+  background: #013a6d;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+} 

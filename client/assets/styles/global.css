@@ -14,7 +14,23 @@ body {
 }
 
 :root {
-  --accent-color: rgba(69, 135, 194, 1);
-  --font-color: rgba(38, 39, 41, 1);
-  --interaction-color: rgba(133, 133, 133, 1);
+  --color-bg-main: #025595;
+  --color-bg-light: #ffffff;
+  --color-text-main: #12181d;
+  --color-text-secondary: #4b4b4b;
+  --color-accent: #1BB3G8;
+  --color-footer-bg: #f7f7f7;
+  --color-bg-main: #ffffff;
+  --color-bg-shape: #c1d3e3;
+  --color-text-main: #2c2b2b;
+  --color-text-secondary: #908d8d;
+  --color-btn-bg: #025595;
+  --font-alt: "Inter", sans-serif;
+  --font-main: "Montserrat", sans-serif;
+  --header-bg: #2d2d2d;
+  --header-text: #fff;
+  --header-accent: #025595;
+  --header-logo-bg: #4b4b4b;
+  --header-logo-border: #025595;
+  --header-lang: #ccc9c9;
 }
