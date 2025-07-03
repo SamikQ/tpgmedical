@@ -1,4 +1,4 @@
-.styledBtn {
+.styledButton {
   display: inline-block;
   width: 100%;
   max-width: 274px;
@@ -9,7 +9,7 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--color-bg-light, #fff);
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(255,255,255,0.01);
   border: 1px solid var(--color-bg-light, #fff);
   border-radius: 12px;
   cursor: pointer;
@@ -19,13 +19,13 @@
   backdrop-filter: blur(16px);
   box-sizing: border-box;
 }
-.styledBtn:hover {
+.styledButton:hover {
   background: var(--color-bg-light, #fff);
   color: var(--header-bg, #2d2d2d);
 }
 
 @media (max-width: 767px) {
-  .styledBtn {
+  .styledButton {
     width: 100%;
     min-width: 120px;
     font-size: 0.95rem;
@@ -34,15 +34,15 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .styledBtn {
+  .styledButton {
     font-size: 1rem;
     padding: 14px 28px;
   }
 }
 
 @media (min-width: 1024px) {
-  .styledBtn {
+  .styledButton {
     font-size: 1.1rem;
     padding: 16px 40px;
   }
-}
+} 

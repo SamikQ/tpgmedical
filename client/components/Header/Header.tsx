@@ -2,7 +2,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
-import logo from "@/assets/images/logo.svg";
+
+const LANGUAGES = [
+  { code: "uk", label: "UA" },
+  { code: "en", label: "EN" },
+];
 
 const NAV_LINKS = [
   { href: "/projects", label: "Проєкти" },
@@ -15,6 +19,7 @@ const NAV_LINKS = [
 const Header: React.FC = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState("uk");
   const langRef = useRef<HTMLButtonElement>(null);
 
   // Закривати меню мови при кліку поза ним
@@ -48,7 +53,7 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.logoBlock}>
         {/* Логотип (замість div можна підключити картинку) */}
-        <img src={logo.src} alt="logo" />
+        <div className={styles.logoImg} />
         <span className={styles.logoText}>
           TECHNOLOGY
           <br />
@@ -80,7 +85,25 @@ const Header: React.FC = () => {
           className={styles.langSelect}
           onClick={() => setLangOpen((v) => !v)}
           aria-haspopup="listbox"
-          aria-expanded={langOpen}></button>
+          aria-expanded={langOpen}>
+          {LANGUAGES.find((l) => l.code === currentLang)?.label}
+          {langOpen && (
+            <div className={styles.langDropdown} role="listbox">
+              {LANGUAGES.filter((l) => l.code !== currentLang).map((lang) => (
+                <button
+                  key={lang.code}
+                  className={styles.langOption}
+                  onClick={() => {
+                    setCurrentLang(lang.code);
+                    setLangOpen(false);
+                  }}
+                  role="option">
+                  {lang.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </button>
       </nav>
     </header>
   );

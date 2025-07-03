@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Hero.module.css";
 import heroBg from "@/assets/images/hero-bg.png";
-import StyledButton from "./StyledButton";
+import StyledButton from "../StyledButton/StyledButton";
 
 const Hero: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
         </h1>
         <StyledButton
           onClick={() => {
-            window.location.href = "projects";
+            window.location.href = "#projects";
           }}>
           Детальніше про проєкт
         </StyledButton>

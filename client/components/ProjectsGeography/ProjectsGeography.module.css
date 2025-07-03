@@ -1,0 +1,255 @@
+.root {
+  width: 100%;
+  background: var(--color-bg-light);
+  color: var(--color-text-main);
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-main);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1065px;
+  min-height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map {
+  width: 100%;
+  height: auto;
+  max-width: 1065px;
+  min-width: 320px;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.line29 {
+  position: absolute;
+  left: 52%;
+  top: 19.5%;
+  width: 0.5%;
+  height: 23%;
+}
+.line30 {
+  position: absolute;
+  left: 48.3%;
+  top: 45.9%;
+  width: 0.5%;
+  height: 37%;
+}
+.line31 {
+  position: absolute;
+  left: 49.9%;
+  top: 44.8%;
+  width: 0.5%;
+  height: 47%;
+}
+.line32 {
+  position: absolute;
+  left: 46.9%;
+  top: 24.3%;
+  width: 0.5%;
+  height: 17.2%;
+}
+.line33 {
+  position: absolute;
+  left: 59.1%;
+  top: 44%;
+  width: 0.5%;
+  height: 32.9%;
+}
+.line34 {
+  position: absolute;
+  left: 65.2%;
+  top: 63.7%;
+  width: 0.5%;
+  height: 27.2%;
+}
+.line36 {
+  position: absolute;
+  left: 66.7%;
+  top: 21.7%;
+  width: 0.5%;
+  height: 38%;
+}
+.line37 {
+  position: absolute;
+  left: 67.8%;
+  top: 69.1%;
+  width: 0.5%;
+  height: 14.7%;
+}
+
+/* Позиціонування країн (приклад, треба підлаштувати під карту) */
+.germany {
+  position: absolute;
+  left: 44.5%;
+  top: 20.5%;
+  font-size: 1rem;
+  color: var(--color-bg-main);
+  font-family: var(--font-main);
+  font-weight: 600;
+  background: var(--color-bg-light);
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(2, 85, 149, 0.08);
+}
+.moldova {
+  position: absolute;
+  left: 48.5%;
+  top: 61.5%;
+  font-size: 1rem;
+  color: var(--color-bg-main);
+  font-family: var(--font-main);
+  font-weight: 600;
+  background: var(--color-bg-light);
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(2, 85, 149, 0.08);
+}
+.montenegro {
+  position: absolute;
+  left: 42.5%;
+  top: 56.5%;
+  font-size: 1rem;
+  color: var(--color-bg-main);
+  font-family: var(--font-main);
+  font-weight: 600;
+  background: var(--color-bg-light);
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(2, 85, 149, 0.08);
+}
+.kazakhstan {
+  position: absolute;
+  left: 70.5%;
+  top: 51.5%;
+  font-size: 1rem;
+  color: var(--color-bg-main);
+  font-family: var(--font-main);
+  font-weight: 600;
+  background: var(--color-bg-light);
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(2, 85, 149, 0.08);
+}
+.ukraine {
+  position: absolute;
+  left: 52.5%;
+  top: 15.5%;
+  font-size: 1rem;
+  color: var(--color-bg-main);
+  font-family: var(--font-main);
+  font-weight: 600;
+  background: var(--color-bg-light);
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(2, 85, 149, 0.08);
+}
+.vietnam {
+  position: absolute;
+  left: 85.5%;
+  top: 71.5%;
+  font-size: 1rem;
+  color: var(--color-bg-main);
+  font-family: var(--font-main);
+  font-weight: 600;
+  background: var(--color-bg-light);
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(2, 85, 149, 0.08);
+}
+.malaysia {
+  position: absolute;
+  left: 80.5%;
+  top: 81.5%;
+  font-size: 1rem;
+  color: var(--color-bg-main);
+  font-family: var(--font-main);
+  font-weight: 600;
+  background: var(--color-bg-light);
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(2, 85, 149, 0.08);
+}
+.bali {
+  position: absolute;
+  left: 90.5%;
+  top: 86.5%;
+  font-size: 1rem;
+  color: var(--color-bg-main);
+  font-family: var(--font-main);
+  font-weight: 600;
+  background: var(--color-bg-light);
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(2, 85, 149, 0.08);
+}
+
+/* Адаптивність */
+@media (max-width: 1023px) {
+  .title {
+    font-size: 2rem;
+  }
+  .mapWrapper {
+    min-height: 220px;
+  }
+  .map {
+    min-width: 220px;
+  }
+}
+@media (max-width: 767px) {
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  .container {
+    padding: 0 4px;
+  }
+  .mapWrapper {
+    min-height: 120px;
+  }
+  .map {
+    min-width: 120px;
+  }
+  .germany,
+  .moldova,
+  .montenegro,
+  .kazakhstan,
+  .ukraine,
+  .vietnam,
+  .malaysia,
+  .bali {
+    font-size: 0.75rem;
+    padding: 1px 4px;
+  }
+}
