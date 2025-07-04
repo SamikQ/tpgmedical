@@ -9,6 +9,10 @@
   /* border: 1px solid red; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-width: 320px;
   max-width: 1440px;
@@ -16,6 +20,8 @@ body {
 }
 
 :root {
+  --color-title-text: #4b4b4b;
+
   --color-bg-main: #025595;
   --color-bg-light: #ffffff;
   --color-text-main: #12181d;
@@ -35,4 +41,28 @@ body {
   --header-logo-bg: #4b4b4b;
   --header-logo-border: #025595;
   --header-lang: #ccc9c9;
+
+  --header-logo-text: 1rem;
+}
+
+.container {
+  padding: 32px 16px;
+}
+
+@media (min-width: 767px) {
+  .container {
+    padding: 64px 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 80px 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 90px 45px;
+  }
 }

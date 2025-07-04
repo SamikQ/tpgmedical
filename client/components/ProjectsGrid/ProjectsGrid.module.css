@@ -1,7 +1,159 @@
-.title {
-}
-
 .grid {
   display: grid;
- 
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin-bottom: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cardTitle {
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1d1d1d;
+}
+
+.moreBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: #1d1d1d;
+  color: white;
+  border-radius: 8px;
+  gap: 10px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.moreBtn:hover {
+  background: #333;
+}
+
+.moreIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/*
+Three different layouts with one set of HTML and optionally used inner container div.
+
+This layout has two breakpoints; one at 30rem (~480px), and one at 60rem (~960px).
+Take note of `grid-template-areas` and `display: contents;` in the CSS.
+
+This code uses the following, optional technologies unavailable in old browsers:
+
+* container queries: https://caniuse.com/css-container-queries;
+* selector nesting: https://caniuse.com/css-nesting;
+* logical properties: https://caniuse.com/css-logical-props.
+
+Card background colors courtesy of:
+https://stephango.com/flexoki
+*/
+
+body {
+  font-size: 1em;
+  line-height: 1.6;
+  padding-block: 4vh;
+  padding-inline: 3vw;
+}
+
+.card-container {
+  container-name: cards;
+  container-type: inline-size;
+}
+
+/* Base styles + layout 1 */
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 1fr;
+  grid-template-areas:
+    "cards-one"
+    "cards-two"
+    "cards-three"
+    "cards-four"
+    "cards-five";
+
+  & .card {
+    padding: 1em 1.5em;
+
+    & h2 {
+      margin-block-start: 0;
+    }
+  }
+
+  & .card--one {
+    background-color: #faeec6;
+    grid-area: cards-one;
+  }
+
+  & .card--two {
+    background-color: #edeecf;
+    grid-area: cards-two;
+  }
+
+  & .card--three {
+    background-color: #ddf1e4;
+    grid-area: cards-three;
+  }
+
+  & .card--four {
+    background-color: #e1eceb;
+    grid-area: cards-four;
+  }
+
+  & .card--five {
+    background-color: #f0eaec;
+    grid-area: cards-five;
+  }
+
+  & .cards-sidebar {
+    display: contents;
+    grid-area: cards-sidebar;
+  }
+}
+
+/* Layout 2 */
+@container cards (30rem <= width < 60rem) {
+  .cards {
+    grid-template-areas:
+      "cards-one cards-sidebar"
+      "cards-two cards-sidebar";
+
+    & .cards-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}
+
+/* Layout 3 */
+@container cards (width >= 60rem) {
+  .cards {
+    /* You must provide the same number of columns in each row, hence the replicated names below: */
+    grid-template-areas:
+      "cards-one  cards-one  cards-two  cards-two  cards-three cards-three"
+      "cards-four cards-four cards-four cards-five cards-five  cards-five";
+  }
 }

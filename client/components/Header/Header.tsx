@@ -1,7 +1,10 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
+
+import logo from "@/public/tpg-logo.svg";
 
 const LANGUAGES = [
   { code: "uk", label: "UA" },
@@ -53,7 +56,7 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.logoBlock}>
         {/* Логотип (замість div можна підключити картинку) */}
-        <div className={styles.logoImg} />
+        <Image src={logo} alt="TPG logo" />
         <span className={styles.logoText}>
           TECHNOLOGY
           <br />
@@ -65,7 +68,8 @@ const Header: React.FC = () => {
       <button
         className={styles.burger}
         aria-label="Відкрити меню"
-        onClick={() => setNavOpen((v) => !v)}>
+        onClick={() => setNavOpen((v) => !v)}
+      >
         <span className={styles.burgerLine} />
         <span className={styles.burgerLine} />
         <span className={styles.burgerLine} />
@@ -76,7 +80,8 @@ const Header: React.FC = () => {
             key={link.href}
             href={link.href}
             className={styles.navLink}
-            onClick={() => setNavOpen(false)}>
+            onClick={() => setNavOpen(false)}
+          >
             {link.label}
           </Link>
         ))}
@@ -85,7 +90,8 @@ const Header: React.FC = () => {
           className={styles.langSelect}
           onClick={() => setLangOpen((v) => !v)}
           aria-haspopup="listbox"
-          aria-expanded={langOpen}>
+          aria-expanded={langOpen}
+        >
           {LANGUAGES.find((l) => l.code === currentLang)?.label}
           {langOpen && (
             <div className={styles.langDropdown} role="listbox">
@@ -97,7 +103,8 @@ const Header: React.FC = () => {
                     setCurrentLang(lang.code);
                     setLangOpen(false);
                   }}
-                  role="option">
+                  role="option"
+                >
                   {lang.label}
                 </button>
               ))}

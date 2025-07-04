@@ -20,6 +20,9 @@ export const metadata: Metadata = {
       en: "/en",
     },
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
