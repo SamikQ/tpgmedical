@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import style from "./index.modules";
+import style from "./style.module.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "small" | "large";
@@ -11,7 +11,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<ButtonProps> = ({
   size = "large",
   variant = "primary",
-  isLoading = false,
   fullWidth,
   className,
   ...props
@@ -20,9 +19,6 @@ const Button: React.FC<ButtonProps> = ({
     style.button,
     style[size],
     style[variant],
-    {
-      [style.loading]: isLoading,
-    },
     {
       [style.full_width]: fullWidth,
     },

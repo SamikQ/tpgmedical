@@ -9,6 +9,7 @@ import project3 from "@/assets/images/projects/project3.jpg";
 import project4 from "@/assets/images/projects/project4.jpg";
 import project5 from "@/assets/images/projects/project5.jpg";
 import FadeInSection from "@/shared/UI/FadeInSection/FadeInSections";
+import Button from "@/shared/UI/Button";
 
 const projects = [
   {
@@ -73,17 +74,7 @@ const ProjectsGrid: React.FC = () => (
       </div>
     </FadeInSection>
     <FadeInSection>
-      <a
-        href="/projects"
-        className={styles.moreBtn}
-        aria-label="Більше проєктів">
-        <span className={styles.moreText}>Більше проєктів</span>
-        <img
-          src="/assets/icons/arrow-2-right-long.svg"
-          alt="Arrow right"
-          className={styles.moreIcon}
-        />
-      </a>
+      <Button variant="tertiary">Більше проєктів</Button>
     </FadeInSection>
   </section>
 );
