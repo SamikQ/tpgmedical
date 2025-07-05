@@ -57,7 +57,6 @@ const projects = [
 const ProjectsGrid: React.FC = () => (
   <section className="container">
     <SectionTitle alignment="left">Наші проєкти</SectionTitle>
-
     <FadeInSection>
       <div className={styles.grid}>
         {projects.map((project) => (
@@ -73,7 +72,7 @@ const ProjectsGrid: React.FC = () => (
         ))}
       </div>
     </FadeInSection>
-    <FadeInSection>
+    <FadeInSection position="right" padding={true}>
       <Button variant="tertiary">Більше проєктів</Button>
     </FadeInSection>
   </section>

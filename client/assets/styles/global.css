@@ -21,14 +21,12 @@ body {
 
 :root {
   --color-title-text: #4b4b4b;
+  --color-text-main: #12181d;
 
-  --button-tertiary-bg: #515151;
-  --button-tertiary-text: #ffffff;
-  --button-tertiary-bg-active: #ffffff;
-  --button-tertiary-text-active: #515151;
+  --button-tertiary-active: #ffffff;
+  --button-tertiary: #515151;
 
   --color-bg-main: #025595;
-  --color-text-main: #12181d;
   --color-text-secondary: #4b4b4b;
   --color-accent: #1BB3G8;
   --color-footer-bg: #f7f7f7;

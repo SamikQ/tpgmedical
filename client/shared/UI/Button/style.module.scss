@@ -1,44 +1,90 @@
+.secondary {
+}
 
-.tertionary {
-  height: 50px;
-  width: 200px;
+.tertiary {
   position: relative;
-  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--color-title-text);
+  box-shadow: 0 0 0 2px var(--color-title-text);
   cursor: pointer;
-  border: 2px solid #252525;
   overflow: hidden;
-  border-radius: 30px;
-  color: #333;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.btn-txt {
-  z-index: 1;
-  font-weight: 800;
-  letter-spacing: 4px;
-}
-
-.type1::after {
-  content: "";
+.tertiary svg {
   position: absolute;
-  left: 0;
-  top: 0;
-  transition: all 0.5s ease-in-out;
-  background-color: #333;
-  border-radius: 30px;
-  visibility: hidden;
-  height: 10px;
-  width: 10px;
-  z-index: -1;
+  width: 24px;
+  fill: var(--button-tertiary);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.terionaty:hover {
-  box-shadow: 1px 1px 200px #252525;
-  color: #fff;
-  border: none;
+.tertiary .arr1 {
+  right: 16px;
 }
 
-.type1:hover::after {
-  visibility: visible;
-  transform: scale(100) translateX(2px);
+.tertiary .arr2 {
+  left: -25%;
+}
+
+.tertiary .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--button-tertiary);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tertiary .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tertiary:hover {
+  box-shadow: 0 0 0 10px transparent;
+  color: var(--button-tertiary-active);
+  border-radius: 12px;
+}
+
+.tertiary:hover .arr1 {
+  right: -25%;
+}
+
+.tertiary:hover .arr2 {
+  left: 16px;
+}
+
+.tertiary:hover .text {
+  transform: translateX(12px);
+}
+
+.tertiary:hover svg {
+  fill: var(--button-tertiary-active);
+}
+
+.tertiary:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #fd8a26;
+}
+
+.tertiary:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
 }
